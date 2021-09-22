@@ -1,0 +1,230 @@
+@font-face {
+    src: url('../fonts/Linotte-Bold.ttf');
+    font-family: LinotteBold;
+}
+
+@font-face {
+    src: url('../fonts/Linotte-Regular.ttf');
+    font-family: LinotteRegular;
+}
+
+body {
+    margin: 0;
+    background-color: #81D0E1;
+    background-image: url("../images/bg_objects.png");
+    font-family: LinotteRegular, sans-serif;
+}
+
+#header {
+    display: flex;
+    padding: 30px 15px 0 15px;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+}
+
+.header-item {
+    width: 46px;
+    height: 46px;
+    border: 3px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    opacity: 0.7;
+}
+
+#mail {
+    display: flex;
+    align-items: center;
+
+
+}
+
+#mail span {
+    margin-left: 10px;
+    font-size: 18px;
+    color: white;
+    position: relative;
+    width: 192px;
+    height: 21px;
+
+}
+
+#mail span::after {
+    content: 'Sign up to our newslette';
+    font-family: LinotteRegular, sans-serif;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform: translate(0, 100%);
+    transition: all .5s;
+    opacity: 0;
+}
+
+#mail a:hover ~ span::after {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+
+.header-item:hover {
+    transition: .5s;
+    opacity: 1;
+    box-shadow: #81d0e1 0 0 0 2px, rgba(255, 255, 255, .5) 0 0 0 4px, inset #81d0e1 0 0 0 3px, inset rgba(255, 255, 255, .3) 0 0 0 4px;
+}
+
+#mail:hover span {
+    opacity: 1;
+}
+
+
+#header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-item {
+    margin: 0 15px;
+}
+
+#container {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#nospan {
+    letter-spacing: 0;
+}
+
+#title {
+    font-family: LinotteBold, sans-serif;
+    font-size: 83px;
+    line-height: 97px;
+    text-align: center;
+    letter-spacing: 0.975em;
+    color: #FFFFFF;
+}
+
+#description {
+    font-family: LinotteRegular, sans-serif;
+    font-size: 50px;
+    line-height: 59px;
+    text-align: center;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.55);
+    margin-top: 41px;
+}
+
+#download {
+    margin-top: 42px;
+}
+
+#download img {
+    width: 186px;
+    height: 61px;
+    transition: all .3s;
+}
+
+#download img:hover {
+    transform: scale(1.1);
+}
+
+#footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+}
+
+#mouse {
+    animation: move 2s infinite ease-in;
+}
+
+#arrows {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    animation: move-2 2s infinite linear;
+}
+
+
+#letter::before {
+    content: 'O';
+    width: 62px;
+    height: 62px;
+    color: white;
+    animation: pulse 3s infinite;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
+
+#letter {
+    position: relative;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes move {
+    0% {
+        transform: translate(0, -10px);
+    }
+
+    50% {
+        transform: translate(0, 10px);
+    }
+
+    100% {
+        transform: translate(0, -10px);
+    }
+}
+
+@keyframes move-2 {
+    0% {
+        transform: translate(0, -10px);
+        opacity: 0;
+    }
+
+    30% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translate(0, 10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(0, -10px);
+        opacity: 0;
+    }
+}
